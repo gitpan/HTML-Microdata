@@ -9,7 +9,7 @@ use Scalar::Util qw(refaddr);
 use JSON;
 use URI;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
 	my ($class, %args) = @_;
@@ -64,7 +64,7 @@ sub _parse {
 
 		unless ($scope->attr('itemprop')) {
 			# This is top level item
-			push $self->{items}, $item;
+			push @{ $self->{items} }, $item;
 		}
 	}
 
