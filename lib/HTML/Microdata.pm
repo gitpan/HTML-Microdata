@@ -9,7 +9,7 @@ use Scalar::Util qw(refaddr);
 use JSON;
 use URI;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub new {
 	my ($class, %args) = @_;
@@ -83,7 +83,7 @@ sub _parse {
 		}
 	}
 
-	my $props = $tree->findnodes('//*[@itemprop]');
+	my $props = $tree->findnodes('//*[@itemscope]/descendant-or-self::*[@itemprop]');
 	for my $prop (@$props) {
 		my $value = $self->extract_value($prop, items => $items);
 		my $scope = $prop->findnodes('./ancestor::*[@itemscope]')->[-1];
