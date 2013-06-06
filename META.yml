@@ -4,11 +4,15 @@ author:
   - 'cho45 <cho45@lowreal.net>'
 build_requires:
   ExtUtils::MakeMaker: 6.36
+  JSON: 0
+  Test::Differences: 0
+  Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.36
-distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.04'
+  CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
+  Module::Build: 0.38
+dynamic_config: 0
+generated_by: 'Minilla/v0.4.5, CPAN::Meta::Converter version 2.131490'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,9 +20,17 @@ meta-spec:
 name: HTML-Microdata
 no_index:
   directory:
-    - inc
     - t
     - xt
+    - inc
+    - share
+    - eg
+    - examples
+    - author
+provides:
+  HTML::Microdata:
+    file: lib/HTML/Microdata.pm
+    version: 0.04
 requires:
   HTML::TreeBuilder::LibXML: 0
   Hash::MultiValue: 0
@@ -26,6 +38,9 @@ requires:
   Scalar::Util: 0
   URI: 0
 resources:
-  license: http://dev.perl.org/licenses/
+  bugtracker: https://github.com/cho45/HTML-Microdata/issues
+  homepage: https://github.com/cho45/HTML-Microdata
   repository: git://github.com/cho45/HTML-Microdata.git
-version: 0.03
+version: 0.04
+x_contributors:
+  - 'Syohei YOSHIDA <syohex@gmail.com>'
